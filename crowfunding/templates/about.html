@@ -1,11 +1,50 @@
-{% extends 'layout.html' %} 
-
-
-{% block title %} 
-    About 
-{% endblock %} 
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    About Us
+{% endblock %}
 
 {% block content %}
-  <h1>About</h1>
-  <p>Check out my <a href="/">Home</a> page.</p>
+<section class="container py-5">
+  <div class="row">
+    <div class="col-12 text-center mb-4">
+      <h1>About Our Crowdfunding Platform</h1>
+      <p class="lead">Empowering projects and bringing innovative ideas to life through community support.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="h4">Our Mission</h2>
+      <p>We are dedicated to providing a platform where creative minds and changemakers can find the financial backing they need. Our mission is to connect passionate individuals with supporters who believe in their vision, fostering an ecosystem of innovation and collaboration.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'images/mission.jpg' %}" alt="Mission image" class="img-fluid rounded shadow">
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6 order-md-2">
+      <h2 class="h4">How It Works</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Create and customize your campaign page.</li>
+        <li class="list-group-item">Share your campaign to reach potential backers.</li>
+        <li class="list-group-item">Receive donations and reach your funding goal.</li>
+        <li class="list-group-item">Keep supporters updated with campaign progress.</li>
+      </ul>
+    </div>
+    <div class="col-md-6 order-md-1">
+      <img src="{% static 'images/about.jpg' %}" alt="How it works image" class="img-fluid rounded shadow">
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h2 class="h4 text-center">Join Our Community</h2>
+      <p class="text-center">Whether you are an entrepreneur, artist, or activist, our platform is designed to help you achieve your goals. Join our community of innovators and make your dreams a reality.</p>
+      {% if not user.is_authenticated %}
+      <div class="text-center">
+        <a href="{% url 'users:register' %}" class="btn btn-primary">Get Started</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
 {% endblock %}

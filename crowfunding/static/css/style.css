@@ -6,49 +6,54 @@
 
 body {
   min-height: 100vh;
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
   background-color: ghostwhite;
   color: black;
-  display: flex;
-  flex-flow: column;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between; /* Ensures space between the left and right sections */
-  align-items: center;
-  padding: 1rem;
-  background-color: #44B78B;
-  color: white;
-  font-size: 2.5rem;
+.navbar {
+  font-size: 2.5rem; /* Adjust font size */
 }
-.nav-left {
-  display: flex;
-  align-items: center;
+.navbar-brand, .nav-link, .logout-button, h4 {
+  font-size: 2.5rem; /* Larger size for specific elements */
 }
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* Adds space between the user name and logout button */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.85;
 }
 main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-a {
-  text-decoration: none;
-  color: #81dbb8;
-  margin-right: 0.5rem; /* Adds spacing between links */
+
 }
 
-a:hover {
-  opacity: .85;
+/* HERE NOT COPIED */
+.masthead{
+  background-size: cover;
+  min-height: 80vh;
+  margin-top: 3%;
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, .1, 0, .2);
 }
 
 
+.color-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
+}
+.donation-section{
+  place-items: center;
+  margin-top: 10px;
+}
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -57,6 +62,7 @@ a:hover {
   padding: 1rem;
   color: black;
   
+  place-items: center;
 }
 .card {
   height: 100%;

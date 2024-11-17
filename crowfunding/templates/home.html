@@ -1,10 +1,18 @@
 {% extends 'layout.html' %} 
-
+{% load crispy_forms_tags %}
 {% block title %} 
   Home 
 {% endblock %}
 
 {% block content %}
-  <h1>Home</h1>
-  <p>Check out my <a href="/about">About</a> page.</p>
+<div class="masthead" style="background-image:url('./media/home_image.png');" >
+  <div class="color-overlay d-flex justify-content-center align-items-start"> 
+    <div class="col-12 text-center  mt-4">
+      <h1 style="color:white;">Crowdfunding Platform</h1>
+      <p class="lead">Empowering projects and bringing innovative ideas to life through community support.</p>
+    </div>
+  </div>
+
+</div>
+ 
 {% endblock %}
