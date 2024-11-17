@@ -1,0 +1,18 @@
+{% extends 'layout.html' %} 
+
+{% block title %} 
+  New Campaign
+ {% endblock %} 
+
+{% block content %}
+    <section >
+      <h1>Agregar Campaña</h1>
+      <form class="form-with-validation" action="{% url 'campaigns:campaigns-new' %}" method="post"
+      enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button class="form-submit" >Agregar</button>
+      </form>
+    </section>
+  
+{% endblock %}

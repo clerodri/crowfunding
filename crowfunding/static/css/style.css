@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: ghostwhite;
+  color: black;
+  display: flex;
+  flex-flow: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /* Ensures space between the left and right sections */
+  align-items: center;
+  padding: 1rem;
+  background-color: #44B78B;
+  color: white;
+  font-size: 2.5rem;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Adds space between the user name and logout button */
+}
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: #81dbb8;
+  margin-right: 0.5rem; /* Adds spacing between links */
+}
+
+a:hover {
+  opacity: .85;
+}
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 5px; 
+  width: 100%;
+  padding: 1rem;
+  color: black;
+  
+}
+.card {
+  height: 100%;
+  max-height: 900px;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* White background for contrast */
+  color: #333; /* Darker text color for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a 3D effect */
+  max-width: 250px; /* Limits the card width */
+  overflow: hidden; /* Ensures content doesn’t overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem; /* Space around each card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover effect */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Moves the card up slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepens the shadow on hover */
+}
+
+.card img.banner {
+  width: 100%; /* Full width */
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 8; /* Matches card border */
+  border-top-right-radius: 8px; /* Matches card border */
+}
+.card-content {
+  flex: 1; /* Takes up all available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures footer stays at the bottom */
+  padding: 1em; /* Padding inside the card */
+}
+.card h2 a {
+  text-decoration: none;
+  font-size: 1.5rem; /* Slightly larger font */
+  font-weight: bold;
+}
+.card-title{
+  color: black;
+  font-weight: lighter;
+}
+.card-by{
+  color: #ccc;
+  margin-bottom: 1em;
+}
+.card h2 a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
+.card h3 {
+  margin: 0.5rem 0; /* Adds space between each line */
+  font-size: 1.5rem; /* Sets a consistent font size */
+}
+
+.card-footer{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-end; /* Aligns items at the bottom */
+  margin-top: auto; /* Ensures the footer is pushed to the bottom */
+ 
+}
+.card-f{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card .details {
+  color: #666; /* Slightly muted color for additional details */
+}
+
+.banner{
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  margin: 0 auto; 
+}
+
+.form-with-validation {
+  font-size: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
+
+.form-with-validation div {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+}
+
+.form-with-validation input {
+  padding: 0.25rem;
+  max-width: 300px;
+}
+
+.form-submit {
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 125px;
+}
+
+.helptext {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.helptext ul {
+  list-style-type: none;
+}
+
+.errorlist {
+  color: #F00;
+  margin-left: 2rem;
+}
+
+.errorlist li::marker {
+  content: '🚨 ';
+}
+.logout {
+  display: inline-block;
+}
+.logout-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+
+.logout-button:hover {
+  opacity: .85;
+}
+
+.cardpage-section{
+ width: 100%;
+ height: 100%;
+}
+.card-page{
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* White background for contrast */
+  color: #333; /* Darker text color for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a 3D effect */
+  overflow: hidden; /* Ensures content doesn’t overflow */
+  display: flex;
+  flex-direction: row;
+
+  margin: 1rem; /* Space around each card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover effect */
+}
+.card-page img {
+  width: 50%;
+  height: auto;
+  margin: 1rem;
+}
+.cardpage-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}

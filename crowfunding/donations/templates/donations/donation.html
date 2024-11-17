@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} 
+
+{% block title %} 
+  Donation
+ {% endblock %} 
+
+{% block content %}
+    <section >
+      <h2>Donate to {{ campaign.title }}</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="form-submit">Submit Donation</button>
+      </form>
+    </section>
+  
+{% endblock %}

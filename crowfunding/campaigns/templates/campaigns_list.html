@@ -1,0 +1,46 @@
+{% extends 'layout.html' %} 
+{% load user_tags %}
+{% block title %} 
+  Campañas
+ {% endblock %} 
+
+{% block content %}
+<section class="card-grid">
+  {% if user.is_authenticated %}
+      {% if not user|has_group:"Administrator" %}
+        <form method="get">
+          {{ filter.form.as_p }}
+          <button type="submit">Filter</button>
+        </form>
+      {% endif %}
+  {% endif %}
+ 
+  {% for campana in filter.qs %}
+  <div class="card">
+    <img class="banner" src="{{ campana.profile_img.url }}" alt="Image of {{ campana.title }}" />
+    <div class="card-content">
+      <h3 >
+        <a class="card-title"  href="{% url 'campaigns:page' id=campana.id %}">
+          {{ campana.title }}
+        </a>
+      </h3>
+      <p class="card-by" >by {{ campana.user }}</p>
+      <p><i class="fa-solid fa-location-dot"></i> {{ campana.direccion }}, Ecuador</p>
+      
+      <div class="card-footer">
+        <div class="card-f">
+          <p>Monto Reunido</p> 
+          <p> ${{ campana.current_amount }}</p>
+        </div>
+        <div class="card-f">
+          <p>Meta</p> 
+          <p> ${{ campana.goal_amount }}</p> 
+        </div>
+        <p> {{ campana.days_remaining }} dias restantes</p>
+      </div>
+    </div>
+  </div>
+  {% endfor%}
+</section>
+  
+{% endblock %}

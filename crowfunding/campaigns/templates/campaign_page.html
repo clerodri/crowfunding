@@ -1,0 +1,35 @@
+{% extends 'layout.html' %} 
+{% load user_tags %}
+{% block title %} 
+  {{campana.id}}
+ {% endblock %} 
+
+{% block content %}
+<section class="cardpage-section">
+    
+    <div class="card-page">
+     <img  src="{{ campana.profile_img.url }}" alt="Image of {{ campana.title }}"/>
+     <div class"cardpage-content">
+      
+      <h2> Categoria: {{ campana.categories }}</h2>
+      <h1 >{{campana.title}}</h1>
+      <h3> Beneficiario: {{ campana.user }}</h3>
+      <h4>Detalle: {{ campana.description}}</h4>
+      <p>Localidad: <i class="fa-solid fa-location-dot"></i> {{ campana.direccion }}, Ecuador</p>
+      <p>Monto Reunido: ${{ campana.current_amount}}</p>
+      <p>Meta: ${{ campana.goal_amount}}</p>
+      <p>Días Restantes: {{ campana.days_remaining }}</p>
+      <p>Estado de campaña: {% if campana.state == 1 %}Activa{% else %}Cerrado{% endif %}</p>
+      {% if not user|has_group:"Administrator" %}
+        {% if campana.state == 1 %}
+            <a href="{% url 'donations:make_donation' campaign_id=campana.id %}">
+                <button class="form-submit">Donar</button>
+            </a>
+        {% endif %}
+      {% endif %}
+     </div>
+     
+    </div>
+</section>
+  
+{% endblock %}
